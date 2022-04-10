@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <link href="/plugins/layui/css/layui.css" rel="stylesheet" type="text/css">
+</head>
+<body style="margin: 15px">
+<!-- 头部查询区域 -->
+<div>
+    关键字：
+    <div class="layui-inline">
+        <input id="keyword" type="text" name="keyword" class="layui-input"/>
+    </div>
+    <input type="button" id="searchBtn" class="layui-btn" value="查询"/>
+    <input type="button" id="addBtn" class="layui-btn" value="新增"/>
+</div>
+
+<!-- 数据表格 -->
+<table id="dataTable" lay-filter="dataTable"></table>
+
+<!-- 用户弹出窗口模版 -->
+<script id="addTemplate" type="text/html">
+    <form class="layui-form" action="" style="padding: 20px" id="userForm" lay-filter="userForm">
+        <input type="hidden" name="id">
+        <div class="layui-form-item">
+            <label class="layui-form-label">用户名</label>
+            <div class="layui-input-inline">
+                <input type="text" name="username" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-inline">
+                <input type="text" name="password" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">姓名</label>
+            <div class="layui-input-inline">
+                <input type="text" name="name" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">年龄</label>
+            <div class="layui-input-inline">
+                <input type="text" name="age" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">性别</label>
+            <div class="layui-input-block">
+                <input type="radio" name="sex" value="1" title="男" checked>
+                <input type="radio" name="sex" value="2" title="女">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">地址</label>
+            <div class="layui-input-inline">
+                <input type="text" name="address" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label"></label>
+            <div class="layui-input-inline">
+                <input id="saveBtn" type="button" value="保存" class="layui-btn">
+            </div>
+        </div>
+    </form>
+</script>
+
+<!-- 表格操作工具条模版 -->
+<script id="operateTemplate" type="text/html">
+    <input type="button" value="角色" lay-event="role" class="layui-btn layui-btn-xs"/>
+    <input type="button" value="编辑" lay-event="edit" class="layui-btn layui-btn-xs"/>
+    <input type="button" value="删除" lay-event="del" class="layui-btn layui-btn-xs layui-btn-danger"/>
+</script>
+
+<script type="text/javascript" src="/plugins/layui/layui.js"></script>
+<script type="text/javascript" src="/js/user.js"></script>
+</body>
+</html>
